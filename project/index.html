@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My First ProcessingJS project</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="myProcessingProject"></canvas>
+
+
+
+<script src="processing.min.js"></script>
+<script>
+
+function sketchProc(processing) {
+	var wide = 5;
+	var high = 5;
+	var myData = processing.loadStrings('data.txt')
+	var mailChimpData = myData[0].split(',')
+	var labels = ['Deliveries', 'Bounces', 'Opens', 'Clicks', 'Unsubscribers']
+	console.log(mailChimpData);
+
+	function overCircle(CenterX, CenterY, diameter) {
+	  var disX = CenterX - processing.mouseX;
+	  var disY = CenterY - processing.mouseY;
+	  if(Math.sqrt(Math.pow(disX, 2) + Math.pow(disY, 2)) < diameter/2 ) {
+	    return true;
+	  } else {
+	    return false;
+	  }
+	}
+
+	processing.setup = function() {
+		//the code for your basic setup functions goes here
+		processing.size(700,500);
+		processing.background(0,0,0);
+	}
+
+	processing.draw = function() {
+		//The Code you want to draw in goes here.
+		processing.background(0,0,0);
+		var toTheLeftToTheLeft = 75;
+		 for (var i = 0; i < mailChimpData.length; i++) {
+		 	if (overCircle(toTheLeftToTheLeft, 100, mailChimpData[i])) {
+		 		processing.stroke(255,0,0);
+		 	} else {
+		 		processing.stroke(255,255,255);
+		 	}
+		 	processing.noFill();
+		 	processing.ellipse(toTheLeftToTheLeft, 100, mailChimpData[i], mailChimpData[i]);
+		 	processing.fill(255,255,255);
+		 	processing.text(labels[i], toTheLeftToTheLeft - 25, 200);
+		 	toTheLeftToTheLeft = toTheLeftToTheLeft + 130;
+		 }
+	};
+}
+	
+	var canvas = document.getElementById("myProcessingProject");
+	// attaching the sketchProc function to the canvas
+	var processingInstance = new Processing(canvas, sketchProc);
+
+</script>
+
+</body>
+</html>

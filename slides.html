@@ -1,0 +1,1808 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/favicon.ico">
+
+  <!-- opens all links in a new window -->
+  <base target="_blank">
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body data-duration="360">
+  <main>
+    <section class="slide welcome highlight">
+      <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
+
+      <div class="instructions">
+        <!-- ADD WIFI INFO HERE -->
+        <h2>Get <br> Connected</h2>
+        <p><strong>Wifi:</strong> Static5 OR Office5</p>
+        <p><strong>Password:</strong> 5nGgT&tJQZ</p>
+        <hr>
+
+        <h2>Download<br> & Install</h2>
+        <ol class="downloads">
+          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/llc-data-viz-with-processingjs/archive/master.zip">http://ow.ly/hfkZ30b4Rlb</a>
+            <ul>
+              <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
+              <li>open <em>slides.html</em> in the browser to view the slides</li>
+            </ul>
+          </li>
+          <li>Atom Editor: <a href="http://atom.io">http://atom.io</a></li>
+          <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
+          </li>
+        </ol>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="http://christinatruong.com">Christina Truong</a>, <a href="http://kathrynbarrett.ca">Kathryn Barrett</a>, <a href="http://sspboyd.ca">Stephen Boyd</a>, and <a href="http://www.wolfewylie.com">William Wolfe-Wylie</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section>
+
+    <section class="slide intro">
+      <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
+      <h1 class="heading-bg">
+        <span>ProcessingJS<br> For Beginners</span>
+      </h1>
+
+      <!-- FILL IN INSTRUCTOR DETAILS -->
+      <img class="instructor" src="WolfeWylieProfile.jpg" alt="Instructor Name">
+      <h2><span class="cursive">with</span> William Wolfe-Wylie</h2>
+      <ul>
+        <li><a href="mailto:william@wolfewylie.com">william@wolfewylie.com</a></li>
+        <li><a href="http://wolfewylie.com">wolfewylie.com.com</a></li>
+        <li><a href="http://twitter.com/wolfewylie">@wolfewylie</a></li>
+      </ul>
+
+      <div class="sponsor">
+        <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="http://christinatruong.com">Christina Truong</a>, <a href="http://kathrynbarrett.ca">Kathryn Barrett</a>, <a href="http://sspboyd.ca">Stephen Boyd</a>, and <a href="http://www.wolfewylie.com">William Wolfe-Wylie</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Course Outline
+
+        <div class="table-of-contents"></div>
+      </script>
+    </section>
+
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Data visualization
+
+        Taking raw numbers and making them visually intriguing, making them mean something to a casual scanner, helping them to tell a story, making them easy to understand.
+
+        * Drawn by hand
+        * Drawn with programs like Photoshop or Illustrator
+        * Drawn with code
+
+      </script>
+    </section>
+
+    <section class="slide centered">
+    	<p>A hand-drawn representation of every door one person walked through in a given week.</p>
+    	<img src="framework/img/deardata.jpg" alt="">
+    </section>
+
+    <section class="slide centered">
+		<p>A vector illustration of world population densities.</p>
+    	<img src="framework/img/worldpop.png" alt="">
+    </section>
+
+	<section class="slide centered">
+    	<p>A live view of where NYC bikeshare bikes are travelling.</p>
+    	<img src="framework/img/nycbikes.png" alt="">
+    </section>
+
+	<section class="slide" data-markdown>
+      <script type="text/template">
+        # Data Visualization
+
+		Remember that even with complex data, simple visualizations can be very meaningful. The goal is to represent data in small easily-consumed chunks. 
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Today's project
+
+        Today we'll be taking a normal text-based data format, like an Excel sheet, and visualizing it for the web:
+
+        * Building web elements that respond to your data
+        * Responding to user mouse-inputs like "hover" and "click"
+        * Making it animate nicely
+
+        View the sample project [here](project/index.html).
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        # Programming Fundamentals
+        ## Part One
+      </script>
+    </section>
+
+    <section class="slide basic-web-page" data-markdown>
+      <script type="text/template">
+        #HTML + CSS + JavaScript = Basic web page
+
+        **HTML (Hypertext Markup Language)** is a _markup_ language used to define the content.
+
+        <p class="example">I'm just a paragraph.</p>
+
+        **CSS (Cascading Style Sheets)** is a _style sheet_ language used to create the presentation and look of a site.
+
+        <p class="example css">I'm a paragraph with <span style="color:purple;">style</span>.</p>
+
+        **JavaScript** is a _programming_ language used to define the behavior and used to add functionality to a website.
+
+        <p class="example" onclick="alert('Clicked!');">I'm a paragraph that can be clicked. Try it!</p>
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        #JavaScript vs ProcessingJS
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What Is JavaScript?
+
+        * controls the *behavior* of HTML documents
+        * used to animate, hide or show items
+        * react to user input
+        * process data and more!
+
+        Here's what JavaScript looks like:
+
+        ```
+        var myVariable = "Hello World";
+        function sayHello(){
+          alert(myVariable);
+        }
+        sayHello();
+        ```
+      </script>
+    </section>
+
+    <section class="slide highlight" data-markdown>
+      <script type="text/template">
+        # JavaScript is a Programming Language
+
+        Because JavaScript is a programming language, the structure and syntax include more complexities than HTML or CSS.
+
+        The basic building blocks of programming include features such as *variables*, *functions*, *objects* or control structures such as *if* statements or *loops*.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #What is ProcessingJS?
+
+        * it is a cross-browser JavaScript *library*
+        * Designed for visual people, it's all about visualization
+        * Open Source, free for everyone to use
+        * is still JavaScript at its core
+
+        ProcessingJS ***is*** JavaScript so it's important to have an understanding of some basic JavaScript principles first.
+
+        Also, note that programming languages often require a little bit more code than HTML & CSS to see results in the browser.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #The Console
+
+        Before we get into the nitty-gritty details of these JavaScript principles, let’s take a look at a tool called the console.
+
+        We'll be using this tool in the upcoming exercises to focus on getting used to the programming syntax.
+
+        This way, we can write programs without relying on HTML & CSS and learn some of the fundamental programming concepts first.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # The Console
+
+        * interactive browser tool
+        * enter commands and interact directly with a web page
+        * can also log diagnostic information and check for errors
+
+        The console in Chrome looks like this:
+        ![The Console](framework/img/workshop/the_console_x.jpg)
+
+        **Important!** The blue `>` symbol represents a space to enter your input but you don't have to actually type the symbol.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Accessing the Console
+
+        You can open the console when viewing _any_ HTML page. In Chrome, there are different ways to open the Console tab.
+
+        Keyboard shortcut:
+        `COMMAND + OPTION + J` (MAC)  / `CONTROL + SHIFT + J` (WINDOWS)
+
+        OR
+
+        Select: `View > Developer > JavaScript Console`.
+
+        Open the console in this slide presentation. Take a moment to practice opening and closing the console until you’re comfortable with it.
+
+        ---
+
+        ###Pro tip!
+        The console also shows any errors on the page so if you open the console on any existing web page, you *may* see some error messages.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Working with Numbers
+
+        In the console, after the `>` symbol, type your favorite number and press the enter/return key. You will see something like this:
+
+        ![console number](framework/img/workshop/console-number.gif) <!-- .element: width="85%" -->
+
+        The ```>``` symbol represents a space for your input.
+        The ```<``` symbol represents the **returned value** of your input.
+
+        ---
+        ###Pro tip!
+        To increase the font size of the console, use `Command/Control +`.
+        Use  `Command/Control 0` to return it back to the default size.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Working with Text
+
+        You can also input text BUT when using text, make sure you include it between quotes (more on this soon).
+
+        ![console string](framework/img/workshop/console-string.gif)<!-- .element: width="85%" -->
+
+        The command you input into the console gets *evaluated* and a value is returned back to you.
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        # Variables & Functions
+        ## The Building Blocks of JavaScript
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What *is* a variable?
+
+        Variables are like containers or a box.
+
+        * used to *store* values
+        * can be used any time, whenever you need them
+        * gives a *name* to a *value*.
+
+        A variable is a named memory location which contains information, to be used at a later time.
+
+        For example, a variable could be used to store a customer's email address.  Then, the variable can be used to send a confirmation email.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Declaring (creating) a variable
+
+        * use the keyword `var`
+        * name the variable anything you want*
+        * end the command with a semi-colon (`;`)
+
+        ```javascript
+        var myVariable = "Hello!";
+        ```
+
+        The value `Hello` is given to the name `myVariable` and is declared using the keyword `var`. This is *assigning* a value to the *variable*.
+
+        Evaluate everything to the right of the equals sign, then assign the value to the variable on the left of the equals sign.
+
+        *See next slide for info about naming conventions <!-- .element: class="note" -->
+      </script>
+    </section>
+
+    <section class="slide nested-list" data-markdown>
+      <script type="text/template">
+        #Variables: Naming conventions
+
+        * Cannot contain spaces:
+          * use camelCase for names with multiple words.
+          * every new word is capitalized
+          * the result looks kind of like `camelHumps`
+        * Cannot contain reserved symbols:
+          * math symbols (+, -, =, etc...)
+          * javascript-specific symbols ({, }, :, etc...)
+        * Cannot begin with:
+          * a digit (0 - 9)
+        * JavaScript is case sensitive
+          * so variable names are also case sensitive
+        * Use a descriptive names:
+        `var firstName;` ← Clear that first name will go here.
+        `var fn;`        ← Not as obvious as firstName.
+        `var x; `        ← Not clear at all.
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Variable Types
+        ##Strings, Numbers, Booleans
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Strings
+
+        When storing text values, like words or sentences, the variable type is a *string* value.
+
+        Strings must be contained in quotes.
+
+        ```javascript
+        var greeting = "Hello!";
+        ```
+
+        ```javascript
+        var greeting = "Good morning!";
+        ```
+
+        ```javascript
+        var greeting = "Good evening!";
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Strings & Concatenation
+
+        You can *add* strings together to join multiple values. This is called **concatenation**.
+
+        ```javascript
+        var greeting = "Good";
+        var greetingTime = "morning";
+        var greetingFull = greeting + " " + greetingTime + "!";
+        ```
+
+        The JavaScript above **concatenates** the three items together like so:
+
+        ```
+        var greetingFull = greeting + " " + greetingTime + "!";
+        var greetingFull = Good + space + morning + exclamation mark
+        var greetingFull = Good morning!
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Declare a Variable (15 minutes)
+
+        Go through the next three slides on your own and get it work on your own, then we'll do it together as a class.
+
+        Let's create a variable called `favFood` and give it a value.
+
+        >What is the syntax for creating a variable and assigning a string value?
+
+        <pre class="delayed"><code>var favFood = "pizza";</code></pre>
+
+        <blockquote class="delayed"><p>Add the above code into the console. What value gets returned?<p></blockquote>
+
+        <pre class="delayed"><code>undefined</code></pre>
+
+        <p class="delayed">That is perfectly fine. Remember, variables are used to <em>store</em> values until you're ready to use them. Let's break it down in the next slide.</p>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Using Variables
+
+        When using the console tool, it will automatically return a value when you input an instruction. Declaring a variable just *stores* the value until you're ready to use it.
+
+        `var favFood` is just holding on to the value, so it returns nothing (undefined). But now, JavaScript knows it exists.
+
+        To actually **use** the variable, just type `favFood` into the console. It will now **return** the value that it was storing and look something like this:
+
+        ```javascript
+        > var favFood = "pizza";
+        < undefined
+        > favFood;
+        < "pizza"
+        ```
+        <!-- ![](framework/img/workshop/console-fav-food.gif) -->
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class exercise: Concatenate
+
+        Let’s try **concatenating** some strings with the `favFood` variable. In the console, try typing this command:
+
+        ```
+        "My favorite food is " + favFood;
+        ```
+
+        ![concatenate example](framework/img/workshop/console-concatenate.gif)
+
+        > **Challenge!** How would you add a period to the end of the sentence?
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+# Variable Types: Strings and Quotes
+
+Strings values can be wrapped in either 'single quotes' or "double quotes." You can use either style but you must start and end the string with the same mark.
+
+But be careful! In the example below, this will cause an error.
+
+```javascript
+var fails = 'This string's value is not going to work!';
+/*          ^           ^
+            |___________|
+            |
+            Javascript thinks the second apostrophe closes the first.
+            It then expects the command to end with a semicolon (;)
+            right after and returns an error.
+*/
+```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Strings and Quotes
+
+        There are two ways to fix it.
+
+        Use double quotes!
+        ```javascript
+        var works = "This string's value is going to work!";
+        ```
+
+        Or *escape* it by using a backslash.
+
+        ```javascript
+        var alsoWorks = 'This string\'s value is not going to work!';
+        ```
+
+        > Try adding each line into your console to check for errors.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Numbers
+
+        Variable **values** can also be numbers.
+
+        ```
+        var meaningOfLife = 42;
+        ```
+
+        JavaScript can also do math.
+
+        `+` addition, `-` subtraction, `*` multiplication, `/` division
+
+        ```javascript
+        var addition = 5 + 2;
+        ```
+        This will return a value of `7`.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Numbers
+
+        These operations work whether the values are numbers, or the values are stored in a variable.
+
+        ```javascript
+         var startingValue = 5;
+         var multiplier = 2;
+         var endingValue = startingValue * multiplier;
+        ```
+
+        This will return a value of `10`.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Numbers & operators
+
+        In the console, let's try using the various math operations.
+
+        `+` addition, `-` subtraction, `*` multiplication and `/` division.
+
+        Examples:
+        ```javascript
+        > 2 + 2;
+        > 199 * 42;
+        ```
+
+        Remember BEDMAS? (Brackets, Exponents, Division, Multiplication, Addition, Subtraction) This also applies in JavaScript.
+
+        ```javascript
+        > 2 + 2 * 4;
+        > (2 + 2) * 4;
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise: numbers & operators
+
+        Let's create a program for finding a person's age.
+
+        1. Create two variables, one for `currentYear` and one for `birthYear`.
+        1. Subtract the two values.
+
+        It will look something like this:
+
+        ```javascript
+        var currentYear = 2016;
+        var birthYear = 1979;
+        var age = currentYear - birthYear;
+
+        ```
+
+        <!-- ![doing math with variables in the console](framework/img/workshop/console-math-variables.gif) -->
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise: Create a JavaScript Program! (~10 mins)
+
+        Using variables & arithmetic operators, calculate how many seconds there are in a day.
+
+        (You can choose your own variable names. Just make sure to adhere to best practices.)<!-- .element: class="note" -->
+
+        1. Declare variables & values for:
+          * `secondsPerMinute`
+          * `minutesPerHour`
+          * `hoursPerDay`
+        1. Declare a `secondsPerDay` variable and use arithmetic operators to calculate the value.
+        1. **Bonus!** Use concatenation to output "There are x seconds per day."
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise Solution
+
+        ```javascript
+        var secondsPerMinute = 60;
+        var minutesPerHour = 60;
+        var hoursPerDay = 24;
+        var secondsPerDay = secondsPerMinute * minutesPerHour * hoursPerDay;
+
+        // This command will output the value of secondsPerDay
+        secondsPerDay;
+
+        // Concatenating strings with the secondsPerDay variable.
+        var sentence = "There are " + secondsPerDay + " seconds per day.";
+
+        // This command will output the value of sentence.
+        sentence;
+        ```
+
+        ```
+        // This is a JavaScript comment by the way :) Use it to leave notes.
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Comments!
+
+        Just like HTML and CSS, you can also leave comments in JavaScript.
+
+        ```
+        // This is how you leave a single line comment.
+
+        // You can write many single line comments.
+        // Just make sure to add the double slash
+        // for every new line.
+        ```
+
+        Here's another way to comment larger blocks of text.
+
+        ```javascript
+        /* This is how you leave
+        multi-line comments for when you
+        want to write a longer message */
+        ```
+
+        Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code.
+        >**Careful:** Multi-line comments do not **nest**. That means you cannot place a multi-line comment inside another!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Booleans
+
+        Variables that only contain a `true` or `false` value are called **booleans**.  You can set values to `true` or `false`.
+
+        ```javascript
+        var lightIsOn = true;
+        ```
+        OR
+        ```javascript
+        var lightIsOn = false;
+        ```
+
+        Values can also be returned as `true` or `false`.
+
+        > Try typing `2 > 4` in the console.  What value gets returned?
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Variable Types
+        ##Objects
+      </script>
+    </section>
+
+    <section id="objects" class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types: Objects
+
+        **Objects** can be thought of as a variable that can hold *multiple* values. To *declare* an object, use the curly brackets `{}`.
+
+        The values are written in `property: value` pairs. Each pair is separated by a comma, except for the last one.
+
+        ```
+        var myObject = {
+          propertyName: propertyValue,
+          anotherPropertyName: anotherPropertyValue
+        }
+        ```
+
+        ```
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+
+        Let's take a closer look at the syntax.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Declare the Object
+
+        ```
+        var coffeeOrder = { }
+        ```
+
+        * Declare the object with `var`.
+        * The object name is `coffeeOrder`.
+        * The curly bracket starts and ends the object.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Add the Properties to the Object
+
+        ```
+        drinkType: "latte",
+        milk: "almond",
+        flavor: "caramel"
+        ```
+
+        * the property name must start with a letter and contain no spaces
+        * a colon (:) is used to separate name from value
+        * a comma (,) separates properties
+        * can be repeated for as many properties as you like
+        * the last pair of `property:value` does not end with a comma
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Objects: Putting it all together!
+
+
+        ```
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+
+        Reminder, objects are similar to variables because they can be used to hold values. But they can hold *multiple* values!
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Accessing an Object Member
+
+        Since objects hold multiple values, they can't be accessed by using the variable name. Object values are accessed using **dot notation**.
+
+        To access the value for the `drinkType` property, it would look like this:
+
+        ```
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+
+        ```
+        coffeeOrder.drinkType
+        ```
+
+        > What value would `coffeeOrder.drinkType` return?
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Objects
+
+        Using the object below, let's add this entire code block into our console and practice accessing various property values.
+
+        ```javascript
+        var coffeeOrder = {
+          drinkType: "latte",
+          milk: "almond",
+          flavor: "caramel"
+        }
+        ```
+
+        > How would you access the value for `milk` and `flavor`? Try it out in the console.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Variable Types
+
+        As you've just seen, there are *many* different variable types in JavaScript and many rules about how to write them.
+
+        There are actually a few more. You can read all about them [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures).
+
+        It will take practice getting used to the different rules. But, in a nutshell, *variables* are used to hold values and the values themselves have different *types*.
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Functions
+        ## Repeating instructions
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Functions
+
+        A `function` is a name for a **set** of commands or instructions.
+
+        When using a function, it executes all the commands contained within, making it easier to make the code repeat repetitive steps.
+
+        Let's look at two functions, `alert()` and `prompt()`.  These come built into JavaScript, for free! Note the syntax, the parentheses `()`, must be included.
+
+        > Go back to the console and type both functions in, one at a time, and see what happens.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Functions and Arguments
+
+        We've seen now that `alert()` and `prompt()` create a pop-ups in the browser but the pop-ups are blank.  An *argument* can be *passed* into the functions by adding a value within the parentheses `()`.
+
+        Try this in the console:
+
+        ```
+        alert("Hello!");
+        ```
+
+        ```
+        prompt("What day is it today?");
+        ```
+
+        It will look similar to this:
+
+        ![console function example](framework/img/workshop/console-alert-prompt.gif)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Make your own functions!
+
+        You can create your own functions that can contain any number of instructions that you need, including other functions.
+
+        Use the `function` keyword to declare a new function.
+
+        ```javascript
+        function sayAnything(){
+          alert("Hello!");
+          prompt("What day is it today?");
+        }
+        ```
+        The above example creates a new **function** called `sayAnything` but similar to variables, nothing will happen until the function is **called**.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Calling a function
+
+        To **call** a function, use the function name plus parentheses `()`.  Remember `alert();` and `prompt();`?
+
+        Let's add this whole function declaration into the console and then execute it by *calling* it.
+
+        ```javascript
+        function sayAnything(){
+          alert("Hello!");
+          prompt("What day is it today?");
+        }
+        ```
+        ```
+        sayAnything();
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Objects, Functions and Methods
+
+        What's the difference between these two?  The second one kind of looks like a function right?
+        ``` javascript
+        alert();
+        console.log();
+        ```
+
+        `alert()` is a **function**, it works on its own.
+
+        `log()` is a **method** because it's attached to an **object**, `console`. It will log a message only into the console tool.
+
+        This is much easier for testing and debugging than using `alert()`. No more pesky pop-ups!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Functions & ProcessingJS
+
+        A function is one of the most powerful tools in JavaScript. ProcessingJS, as it turns out, is a giant object whith a whole pile of functions available to us.
+
+        Remember, ProcessingJS is a <!-- .element: class="delayed" -->**JavaScript library**.
+
+        It's library of functions/methods used to simplify your program. You can download it and use in your projects.  There's a lot more to JavaScript but this intro will help to get up and running with ProcessingJS!<!-- .element: class="delayed" -->
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Getting started
+
+        The first step is telling your web page how to read Processing commands. That means importing the library. Throw this code at the end of your BODY tag.
+
+        ```
+        < canvas id="myProcessingProject"></ canvas>
+
+        < script src="processing.min.js">< /script>
+        ```
+
+        We add the CANVAS element to hold all of our Processing output. Instead of drawing HTML elements, we're going to be drawing to the canvas. 
+
+        You can find the file "processing.min.js" in the projects folder with the files you downloaded. That script tag will give us access to all the functions ProcessingJS has to offer. 
+
+      </script>
+    </section>
+
+    <section class="slide centered">
+      <img src="http://33.media.tumblr.com/2466ab981143fb18653f8f09bce061c7/tumblr_n982qbvyFQ1s5lf2ro1_400.gif" alt="">
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # What can ProcessingJS do?
+
+        * Read data from files you've collected
+        * Visualize that data 
+        * Animate your creations to respond to user clicks and hovers
+        * and much more!
+
+        The library contains many, many built-in functions and methods.
+
+        View the documentation here: [http://processingjs.org/reference/](http://processingjs.org/reference/).
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+
+      <script type="text/template">
+       #Setting up ProcessingJS for the first time
+
+        Now that you have your SCRIPT tag in your HTML file to import processing, you can add another SCRIPT tag below that one and we can begin to write our first bits of ProcessingJS.
+
+        To begin, we have to create an "instance" of Processing. An instance is basically a copy of the programming that is currently running. You can have more than one instance of Processing just as you can open more than one Word document at the same time.
+
+        ```
+        function sketchProc(processing) {
+          processing.setup = function() {
+          //the code for your basic setup functions goes here
+          }
+          processing.draw = function() {
+            //The code to describe what you want to draw goes here.
+          };
+        }
+        var canvas = document.getElementById("myProcessingProject");
+        var processingInstance = new Processing(canvas, sketchProc);
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide">
+      <h1>The Draw function</h1>
+
+      <p>Just as we explored earlier, draw() is a method in Processing that actually adds elements to your canvas. It draws on your canvas.</p>
+
+      <p>The draw() method is not static, though. It keeps repeating over and over and over again. It's a constantly running loop. draw() is triggered 60 times per second, or once every 160 milliseconds.</p>
+
+      <p>This means you can play with changing rules that govern how your visualization draws itself. That will become a lot of fun later today.</p>
+    </section>
+
+    <section class="slide" data-markdown>
+      #Your first drawing
+
+      With your draw() function in place, you can now begin to add commands that will actually draw on the canvas. Directly below the comment, start playing with the rect() method. 
+
+      ```
+      function sketchProc(processing) {
+        processing.setup = function() {
+          //the code for your basic setup functions goes here
+          processing.size(700,500);
+        }
+        processing.draw = function() {
+          //The code to describe what you want to draw goes here.
+          processing.rect(10,20,130,260);
+        };
+      }
+      var canvas = document.getElementById("myProcessingProject");
+      // attaching the sketchProc function to the canvas
+      var processingInstance = new Processing(canvas, sketchProc);
+      ```
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #What's actually happening here
+
+        Let's break that last bit down line-by-line: Starting at the bottom.
+
+        ```
+        var canvas = document.getElementById("myProcessingProject");
+        ```
+
+        This goes and gets your canvas element, saving the HTML element into a new variable called "canvas."
+
+        ```
+        var processingInstance = new Processing(canvas, sketchProc);
+        ```
+        This starts up a new Processing program and sends it two things: Your canvas, and the name of the function that will control how it behaves. 
+
+        This sends us back to the top of our sketchProc function to do some setup tasks: 
+
+        ```javascript
+        function sketchProc(processing) {
+            processing.setup = function() {
+              //the code for your basic setup functions goes here
+              processing.size(700,500);
+            }
+            processing.draw = function() {
+              //The code to describe what you want to draw goes here.
+              processing.rect(10,20,130,260);
+            };
+          }
+        ```
+        sketchProc() is the name of our function that controls how our canvas behaves.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Setup() and Draw()
+
+        These two functions can be confusing at first. Setup(), though, is only ever run once. It does the basic construction, sets your overall preferences, sets the size of your canvas and sets the background color. All your "initial states", as the lingo goes, go in the setup() function. 
+
+        The draw() function includes everything that's added on top of the initial state. In our case, that includes drawing a rectangle on top of our canvas background.
+  
+        ```
+        function sketchProc(processing) {
+            processing.setup = function() {
+              //the code for your basic setup functions goes here
+              processing.size(700,500);
+            }
+            processing.draw = function() {
+              //The code to describe what you want to draw goes here.
+              processing.rect(10,20,130,260);
+            };
+          }
+        ```
+        
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Coordinates are weird
+
+        A lot of the elements you draw in Processing will use a coordinate system to tell them where they should be. These often look like your rect() method on the previous slides. 
+
+        ```
+          processing.rect(10,20,130,260);
+        ```
+
+        These are x and y values, then the width and height values. So the top-left corner of the rectangle is at 10 pixels from the left of the canvas edge (the x value) and 20 pixels from the top of the canvas edge (the y value). 
+
+        Then the lower-right corner of the rectangle is at 130 pixels from the left start position, and 260 pixels from the top start position. 
+
+        Similarly, you can have an ellipse: 
+
+        ```
+         ellipse(50, 50, 25, 25); 
+        ```
+        
+        The first set of coordinates is the center of the ellipse (x and y) and the second two numbers are how tall and wide it is. 
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Layer your rectangles (~10 mins) 
+
+        Build four rectangles, each of which overlap each other so they look like a row of dominoes that have fallen over. You can stagger them horizontally or vertically. Or, if you want a bigger challenge, it can be both.
+
+        Extra challenge: Put a circle inside each rectangle ... kind of like a domino dot.
+
+      </script>
+    </section>
+
+        <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise answer
+
+        The trick here is just to increase the start coordinates and end coordinates by a little bit each time you build each rectangle. 
+
+        ```
+        processing.rect(10,20,40,70);
+        processing.rect(30,20,60,70);
+        processing.rect(50,20,80,70);
+        processing.rect(70,20,100,70);
+        ```
+        
+        Or, you can stagger them both ways by incrementing both 
+        parameters.
+
+        ```
+        processing.rect(10,20,40,70);
+        processing.rect(30,40,60,90);
+        processing.rect(50,60,80,110);
+        processing.rect(70,80,100,130);
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Getting more complicated
+
+        Up to now, we've known in theory that the draw() function runs 60 times per second and that can be used to animate your visualizations, but with our static rect() that's a little difficult to see. 
+
+        Let's update that draw() function with our knowledge of JavaScript to make it a little more dynamic. 
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Challenge: The case of the growing rect() (code-along)
+
+        JavaScript let's you establish global variables that can start off as one value, but adjust as the program runs. So at the top of your sketchProc function, add these two variables:
+
+        ```
+        var wide = 10;
+        var high = 20;
+        ```
+
+        1. Draw a small rectangle on your page
+        2. Make the rectangle grow on its own
+
+        (the solution is the GrowingRectangleChallenge folder in your course notes)
+        
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Solution: The case of the growing rect()
+
+        The trick here is that variables can be updated after you set them, which is part of what makes them very powerful. 
+
+        So at the bottom of your draw() function, you can include this: 
+
+        ```
+          wide = wide + 0.1;
+          high = high + 0.2;
+        ```
+
+        You can change those numbers to change how quickly your rectangle grows. 
+
+        
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Order of operations
+
+        Let's look back at that ellipse we started drawing earlier. 
+
+        ```
+        processing.ellipse(50, 50, 25, 25);
+        ```
+
+        Add that right after your rect() inside your draw function to make your draw function read like this: 
+
+        ```
+        processing.rect(10,20,wide,high);
+        processing.ellipse(50, 50, 25, 25);
+        wide = wide + 0.1;
+        high = high + 0.2;
+        ```
+
+        Now run your app. 
+
+        Notice that the ellipse is always on top of the rectangle. This is because every time the app runs, 60 times per second, it draws the rectangle, then draws the ellipse. The rectangle comes first in the script, so it is drawn first. The ellipse comes second so it is drawn second. 
+
+        Flip the order of the ellipse and the rect to see what happens. 
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Working with colour
+
+        The processing.fill() method allows you to set the fill colour of any element you draw on your canvas. Once you set fill(), though, it applies to all draw commands that come after it. All colour values are supplied as RGB values. 
+
+        ```
+        processing.fill(255,0,0);
+        processing.rect(10,20,wide,high);
+        processing.ellipse(50, 50, 25, 25);
+        ```
+
+        The above makes both the rectangle and the ellipse bright red. But: 
+
+        ```
+        processing.fill(255,0,0);
+        processing.rect(10,20,wide,high);
+        processing.fill(0,255,0);
+        processing.ellipse(50, 50, 25, 25);
+        ```
+
+        This makes a red rectangle and a green ellipse on top of it. 
+
+        Similarly, in setup() you can set processing.background() as an rgb value to shift it away from this dull default gray. 
+
+        ```
+        processing.background(15,200,80);
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Adding interactivity
+
+        One of the easiest ways to add interactivity to your Processing visualization is by tracking mouse movements over the page (or finger presses, as is often the case). Processing comes with a few methods that help with this. 
+
+        ```
+          var mouseXposition = processing.mouseX;
+          var mouseYposition = processing.mouseY;
+        ```
+
+        You can use these values to identify where your shapes should appear on your canvas. For example, let's change the center of where our circle is drawn to make it match our mouse position. The circle can therefore track our mouse movements. 
+
+        In your draw() function, adjust your ellipse command to:
+        
+        ```
+          processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
+        ```
+        
+        Now run your app. 
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Well that was weird
+
+        The circle repeated itself all over the page! Goodness, that's not what we want. 
+
+        The reason it did this is because processing repeats the draw() function 60 times per second, but it never clears away what it already drew on the canvas unless you explicitly tell it to do so. Right now, we have all of our original draw() commands executing one on top of the other. 
+
+        The fix this, add this one line to the top of your draw() command. 
+
+        ```
+          processing.background(15,200,80);
+        ```
+
+        You can reset the background of your app on each cycle so none of it draws on top of itself, making for a much cleaner, and more magic, look. 
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # If statements in Processing
+        
+        The other part of what you can do inside your draw() function is write IF statements: conditionals that test all 60 times per second to see if they should run one way or the other. 
+
+        This way, we can set a cap on how much our rectangle can grow.
+
+        ```
+        if (high >= 480) {
+          console.log('all done');
+        } else {
+          wide = wide + 0.1;
+          high = high + 0.2;
+        }
+        ```
+
+        Tip: We use 480 because our canvas is 500 pixels tall and we start the rectangle 20 pixels from the top. 500 - 20 = 480
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #Behavioural IF statements
+
+        You can also use IF statements to test where the user's mouse is and define behaviour based on that position. 
+
+        For example, you could test to see if the circle you're positioning around the mouse is inside the box, and change the color of either the circle or the box because of that position. 
+
+        This extensive list of conditions (four of them, one for each side of our square), asks if the mouse is inside the boundaries of our rectangle. 
+
+        ```
+        if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 20 && processing.mouseY < (high + 20)) {
+          processing.fill(255,0,0);
+        } else {
+          processing.fill(0,0,255);
+        }
+        ```
+
+        Tip: We use the +10 and the +20 on the conditions to accomodate the starting position of our rectangle, otherwise we would be measuring from the top corner of our canvas, not the top corner of our rectangle.
+
+      </script>
+    </section>
+
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Nests are where ideas hatch (~15 mins) 
+
+        Expanding on these concepts, what if a circle only appeared where your mouse is, and followed your mouse around, when your mouse entered one of the rectangles? 
+
+        1. Build two rectangles. 
+        2. Make your rectangles change fill colour when your mouse enters them.
+        3. Make a circle appear over your mouse when your mouse enters either rectangle. 
+
+        Stretch goal: What if your circles changed size depending on how far into the rectangle they are? That would be cool. 
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise answer
+
+        The trick here is to nest your if statements inside your if statements. That can be hard to read, but it also becomes very powerful once you wrap your head around what's happening. 
+
+        This is just one way to do it and you may have come up with another way that also makes sense. The only thing that matters is that it works and it meets your goals. 
+
+        Note that the trick here is that you technically detect where your rectangle is going to be before you even draw it, which can be a bit of a mind bend.
+
+      ```
+      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 20 && processing.mouseY < (high + 20)) {
+      processing.fill(255,0,0);
+      processing.rect(10,20,wide,high);
+      processing.fill(0,255,0);
+      processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
+      } else {
+      processing.fill(0,0,255);
+      processing.rect(10,20,wide,high);
+      }
+
+      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 80 && processing.mouseY < (high + 80)) {
+      processing.fill(0,255,0);
+      processing.rect(10,80,wide,high);
+      processing.fill(255,0,0);
+      processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
+      } else {
+      processing.fill(0,0,255);
+      processing.rect(10,80,wide,high);
+      }
+      ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Stretch goal answer
+
+        Changing the size of the circle depending on where your mouse is means you have to modify that one line: processing.ellipse.
+
+        Instead of a static value of 25 for the height and width, we can pay attention to where the mouse is. Then we can incorporate that number into a calculation to determine the new height. That might look like: 
+
+        ```
+        25 + (processing.mouseY / 3)
+        ``` 
+
+        The 25 is our base value, the smallest we want the circle to be. Then we add the mouseY to it. The / 3 is just to make the difference less jarring. It's stylistic. Mess with it and see what happens. 
+
+        The full solution is: 
+
+
+      ```
+      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 20 && processing.mouseY < (high + 20)) {
+      processing.fill(255,0,0);
+      processing.rect(10,20,wide,high);
+      processing.fill(0,255,0);
+      processing.ellipse(processing.mouseX, processing.mouseY, 25 + (processing.mouseY / 3), 25 + (processing.mouseY / 3));
+      } else {
+      processing.fill(0,0,255);
+      processing.rect(10,20,wide,high);
+      }
+
+      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 80 && processing.mouseY < (high + 80)) {
+      processing.fill(0,255,0);
+      processing.rect(10,80,wide,high);
+      processing.fill(255,0,0);
+      processing.ellipse(processing.mouseX, processing.mouseY, 25 + (processing.mouseY / 3), 25 + (processing.mouseY / 3));
+      } else {
+      processing.fill(0,0,255);
+      processing.rect(10,80,wide,high);
+      }
+      ```
+
+      </script>
+    </section>
+
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Project time!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Mailchimp
+        
+        Open the project folder in the course files. 
+
+        Look at Data.txt.
+
+        There 5 numbers in it. They are separated by commas, which is a common way to store data like this. 
+
+        The five numbers refer to deliveries, bounces, opens, clicks, unsubscribers, in a single Mailchimp report.
+
+        Tip: This project is best done in the Firefox browser. 
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Telling processing how to access the data
+
+        Processing comes with a method that allows you to read data from a text file and store it in a variable. 
+
+        We don't want to do this every single time the draw() function runs, 60 times per second, we just want to do it once at the top of the program so we don't spend so much energy reading data.
+
+        We can do this before we even run our setup() function: 
+
+        ```
+          var myData = processing.loadStrings('data.txt')
+          var mailChimpData = myData[0].split(',')
+          console.log(mailChimpData);
+        ```
+
+        This is steps. The first step is to grab the text data. Then we need to actually split it into an array so we can treat each value in it separately. 
+
+        The split() function allows you to specify the comma as the separating character, splitting each value from each other using the commas. 
+
+        The console.log() at the end allows you to see the final list of data, presented as a nice clean array. 
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Looping through your data
+
+        Once you import your data, you can draw different shapes on your canvas in accordance with your data. You can also control the size of those drawings by using the data as attributes like "width" and "height."
+
+        As before, you should create a setup() function that will establish the base of your canvas: 
+
+        ```
+          processing.setup = function() {
+            //the code for your basic setup functions goes here
+            processing.size(700,500);
+            processing.background(0,0,0);
+          }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Looping through your data
+
+        Now, just like the last example, we can setup a draw() function that will loop 60 times per second to draw our data. 
+
+        ```
+        processing.draw = function() {
+          //The Code you want to draw in goes here.
+          processing.background(0,0,0);
+           for (var i = 0; i < mailChimpData.length; i++) {
+            processing.fill(255,255,255);
+            processing.ellipse(100, 100, mailChimpData[i], mailChimpData[i]);
+           }
+        };
+
+        ```
+
+        This places five circles of varying widths directly on top of each other, with the centres of each of them at 100 pixels in from the left, and 100 pixels down from the top. 
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #But wait a second...
+
+        Don't we want them to be hollow so we can see through them? And shouldn't they be spread out a bit? 
+
+        Yes, yes they should be. 
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Stroke colours
+
+        So far we've dealt with colours in terms of their fill. But you can also determine their stroke colour - the thin line that forms the outer edge of the circle. You can also determine that line's width. 
+
+        Enter: The stroke values. 
+
+        ```
+        processing.stroke(255,255,255);
+        processing.noFill();
+        ```
+
+        These two lines will make sure there isn't any fill in your circles, and they'll give it a white stroke. Go ahead and pick your favourite color to use.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Scooch over a bit
+
+        We want our circles to all live next to each other, not on top of each other. Friendly neighbours, not roommates. 
+
+        So in our loop, we can change the center of each circle individually by adding another variable. Before the loop starts -- inside your draw() function but outside of the loop drawing your circles -- add this variable:
+
+        ```
+        var toTheLeftToTheLeft = 75;
+        ```
+
+        Then you can change your ellipsis() command to include that variable on the x-axis -- the horizontal axis. 
+
+        ```
+        processing.ellipse(toTheLeftToTheLeft, 100, mailChimpData[i], mailChimpData[i]);
+        ```
+
+        Then, at the bottom of your loop, change that variable for the next circle in line to be drawn. 
+
+        ```
+        toTheLeftToTheLeft = toTheLeftToTheLeft + 130;
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #All together now
+
+        At this point, your complete draw() function should look something like this: 
+
+        ```
+        processing.draw = function() {
+            //The Code you want to draw in goes here.
+            processing.background(0,0,0);
+            var toTheLeftToTheLeft = 75;
+             for (var i = 0; i < mailChimpData.length; i++) {
+              processing.stroke(255,255,255);
+              processing.noFill();
+              processing.ellipse(toTheLeftToTheLeft, 100, mailChimpData[i], mailChimpData[i]);
+              toTheLeftToTheLeft = toTheLeftToTheLeft + 130;
+             }
+        };
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Responding to the user
+
+        Now we have several circles on our page, but isn't it more fun when they show the user something when they hover over them? 
+
+        Of course it is. 
+
+        This part is a little complicated, but if you place this function just above your setup() function, but inside your sketchProc() function, you can test to see if your cursor is inside each circle. 
+
+        ```
+        function overCircle(CenterX, CenterY, diameter) {
+          var disX = CenterX - processing.mouseX;
+          var disY = CenterY - processing.mouseY;
+          if(Math.sqrt(Math.pow(disX, 2) + Math.pow(disY, 2)) < diameter/2 ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        ```
+
+        Activating it and making it respond to the user: That's on the next slide.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Responding to the user
+
+        That function exists to test if your cursor is inside the circle. Now we need to call it inside our draw() function so we can use it. Update your draw function to call that function each time a circle is drawn: 
+
+        ```
+        if (overCircle(toTheLeftToTheLeft, 100, mailChimpData[i])) {
+          processing.stroke(255,0,0);
+        } else {
+          processing.stroke(255,255,255);
+        }
+
+        ```
+
+        This tests, 60 times per second, if your cursor is inside the circle. If it is, it draws a red stroke. If it's not, it draws a white stroke. Handy!
+
+      </script>
+    </section>
+
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Labels
+
+        It's starting to look really great. Now let's just add some labels so we know what we're looking at. 
+
+        Working with text in Processing is super easy. There's a method called text() that handles all the text you need to place in your graphic, as well as it's positioning. All in one go. 
+
+        So before you adjust your toTheLeftToTheLeft variable, but after you add your ellipsis, add these two lines: 
+
+        ```
+        processing.fill(255,255,255);
+        processing.text('Test Text', toTheLeftToTheLeft - 25, 200);
+        ```
+
+        We add the -25 so that we can backtrack the text to center it under the circle. The 200 is how far from the top of the canvas the text is. "Test Text" is the text that will actually appear in your graphic. 
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Labels that mean something
+
+        Instead of "test text" it would be helpful if our text described the circle it was under. To do that, we'll need an array of labels to use, in the same order as our circle data. 
+
+        So if our circle data is:
+        
+        ```
+        231,85,87,16,2
+        ```
+
+        Then our labels need to be: 
+
+        ```
+        deliveries, bounces, opens, clicks, unsubscribers
+        ```
+
+        So at the top of your sketchProc() function, where you set up your data import, you can add this one line to establish your labels: 
+
+        ```
+        var labels = ['Deliveries', 'Bounces', 'Opens', 'Clicks', 'Unsubscribers']
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #Add the right labels
+
+        Now instead of "Test text" you can insert your appropriate label. Change your text() command to: 
+
+        ```
+        processing.text(labels[i], toTheLeftToTheLeft - 25, 200);
+
+        ```
+        The labels[i] will refers to master array of labels at the top of the program, and the i refers to the loop through your circle construction. 
+
+        So just as your app builds its first circle, it grabs its first label. As it builds its second circle, it grabs the second label. And so on. 
+
+        Loops are great. 
+
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # All done!
+
+         </script>
+    </section>
+
+    <section class="slide" data-toc>
+      <h1>Extra resources</h1>
+
+      <p>To keep you going, here are some extra links relating to ProcessingJS that you may find useful.</p>
+
+      <ul>
+        <li>
+          <a href="http://processingjs.org/reference/">The complete resource guide, all the methods.</a>
+        </li>
+        <li>
+          <a href="http://processingjs.org/download/">Download the latest version.</a>
+        </li>
+        <li>
+          <a href="http://processingjs.org/articles/jsQuickStart.html">Quick start guide for ProcessingJS for people already familiar with JavaScript.</a>
+        </li>
+        <li>
+          <a href="https://processing.org/examples/rollover.html">A guide for handling mouse-over events.</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide" data-toc>
+      <h1>Resources for data visualization</h1>
+
+      <p>Data visualization is a complex job, and creativity drives most of it. The technical side is just code. Here are some great resources to get your brain in the right gear.</p>
+
+      <ul>
+        <li>
+          <a href="http://www.datavizcatalogue.com/">The Data Visualization Catalogue</a>
+        </li>
+        <li>
+          <a href="http://jsdatav.is/visuals.html">Data visualization with JavaScript</a>
+        </li>
+        <li>
+          <a href="https://github.com/d3/d3/wiki/Gallery">Data visualizations with D3</a>
+        </li>
+        <li>
+          <a href="http://www.dear-data.com/">Dear Data: Everyday data visualizations</a>
+        </li>
+      </ul>
+
+    </section>
+
+
+    <section class="slide last">
+      <h1>Thank you!</h1>
+      <h2 class="heading-bg">
+        <span>Intro to ProcessingJS</span>
+      </h2>
+
+      <!-- <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <h2><span class="cursive">with</span> Instructor Name</h2>
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="#">mywebsite.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
+
+      <p class="attribution">Slide presentation created by <a href="http://wolfewylie.com">William Wolfe-Wylie</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
+
+  </main><!-- cls main section -->
+
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
+
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="framework/scripts/llc.js"></script>
+  <script>
+    var slideshow = new SlideShow();
+
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+  </script>
+  </body>
+</html>

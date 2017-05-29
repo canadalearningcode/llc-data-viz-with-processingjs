@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My First ProcessingJS project</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="myProcessingProject"></canvas>
+
+
+
+<script src="processing.min.js"></script>
+<script>
+function sketchProc(processing) {
+	var wide = 50;
+	var high = 25;
+
+	processing.setup = function() {
+		//the code for your basic setup functions goes here
+		processing.size(500,500);
+		processing.background(15,200,80);
+	}
+
+	processing.draw = function() {
+		//The Code you want to draw in goes here.
+		
+		processing.background(15,200,80);
+		
+		if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 20 && processing.mouseY < (high + 20)) {
+			processing.fill(255,0,0);
+			processing.rect(10,20,wide,high);
+			processing.fill(0,255,0);
+			processing.ellipse(processing.mouseX, processing.mouseY, 25 + (processing.mouseY / 3), 25 + (processing.mouseY / 3));
+		} else {
+			processing.fill(0,0,255);
+			processing.rect(10,20,wide,high);
+		}
+		
+
+		if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 80 && processing.mouseY < (high + 80)) {
+			processing.fill(0,255,0);
+			processing.rect(10,80,wide,high);
+			processing.fill(255,0,0);
+			processing.ellipse(processing.mouseX, processing.mouseY, 25 + (processing.mouseY / 3), 25 + (processing.mouseY / 3));
+		} else {
+			processing.fill(0,0,255);
+			processing.rect(10,80,wide,high);
+		}
+
+	};
+}
+	
+	var canvas = document.getElementById("myProcessingProject");
+	// attaching the sketchProc function to the canvas
+	var processingInstance = new Processing(canvas, sketchProc);
+
+</script>
+
+</body>
+</html>
