@@ -1343,7 +1343,7 @@ var fails = 'This string's value is not going to work!';
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Nests are where ideas hatch (~15 mins) 
+        #Exercise: "if" you're happy and you know it (~15 mins) 
 
         Expanding on these concepts, what if a circle only appeared where your mouse is, and followed your mouse around, when your mouse entered one of the rectangles? 
 
@@ -1360,32 +1360,32 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         #Exercise answer
 
-        The trick here is to nest your if statements inside your if statements. That can be hard to read, but it also becomes very powerful once you wrap your head around what's happening. 
+        The trick here is to have multiple if statements in your draw() function. That can be hard to read, but it also becomes very powerful once you wrap your head around what's happening.
 
-        This is just one way to do it and you may have come up with another way that also makes sense. The only thing that matters is that it works and it meets your goals. 
+        This is just one way to do it and you may have come up with another way that also makes sense. The only thing that matters is that it works and it meets your goals.
 
         Note that the trick here is that you technically detect where your rectangle is going to be before you even draw it, which can be a bit of a mind bend.
 
-      ```
-      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 20 && processing.mouseY < (high + 20)) {
-      processing.fill(255,0,0);
-      processing.rect(10,20,wide,high);
-      processing.fill(0,255,0);
-      processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
-      } else {
-      processing.fill(0,0,255);
-      processing.rect(10,20,wide,high);
-      }
+        ```javascript
+        if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 20 && processing.mouseY < (high + 20)) {
+          processing.fill(255,0,0);
+          processing.rect(10,20,wide,high);
+          processing.fill(0,255,0);
+          processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
+        } else {
+          processing.fill(0,0,255);
+          processing.rect(10,20,wide,high);
+        }
 
-      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 80 && processing.mouseY < (high + 80)) {
-      processing.fill(0,255,0);
-      processing.rect(10,80,wide,high);
-      processing.fill(255,0,0);
-      processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
-      } else {
-      processing.fill(0,0,255);
-      processing.rect(10,80,wide,high);
-      }
+        if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 80 && processing.mouseY < (high + 80)) {
+          processing.fill(0,255,0);
+          processing.rect(10,80,wide,high);
+          processing.fill(255,0,0);
+          processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
+        } else {
+          processing.fill(0,0,255);
+          processing.rect(10,80,wide,high);
+        }
       ```
 
       </script>
