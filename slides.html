@@ -521,7 +521,7 @@ var fails = 'This string's value is not going to work!';
         ```javascript
         var addition = 5 + 2;
         ```
-        This will return a value of `7`.
+        This will assign a value of `7`.
 
       </script>
     </section>
@@ -697,7 +697,7 @@ var fails = 'This string's value is not going to work!';
         var myObject = {
           propertyName: propertyValue,
           anotherPropertyName: anotherPropertyValue
-        }
+        };
         ```
 
         ```
@@ -705,7 +705,7 @@ var fails = 'This string's value is not going to work!';
           drinkType: "latte",
           milk: "almond",
           flavor: "caramel"
-        }
+        };
         ```
 
         Let's take a closer look at the syntax.
@@ -717,7 +717,7 @@ var fails = 'This string's value is not going to work!';
         # Declare the Object
 
         ```
-        var coffeeOrder = { }
+        var coffeeOrder = { };
         ```
 
         * Declare the object with `var`.
@@ -754,7 +754,7 @@ var fails = 'This string's value is not going to work!';
           drinkType: "latte",
           milk: "almond",
           flavor: "caramel"
-        }
+        };
         ```
 
         Reminder, objects are similar to variables because they can be used to hold values. But they can hold *multiple* values!
@@ -775,7 +775,7 @@ var fails = 'This string's value is not going to work!';
           drinkType: "latte",
           milk: "almond",
           flavor: "caramel"
-        }
+        };
         ```
 
         ```
@@ -797,7 +797,7 @@ var fails = 'This string's value is not going to work!';
           drinkType: "latte",
           milk: "almond",
           flavor: "caramel"
-        }
+        };
         ```
 
         > How would you access the value for `milk` and `flavor`? Try it out in the console.
@@ -982,7 +982,7 @@ var fails = 'This string's value is not going to work!';
         function sketchProc(processing) {
           processing.setup = function() {
           //the code for your basic setup functions goes here
-          }
+          };
           processing.draw = function() {
             //The code to describe what you want to draw goes here.
           };
@@ -1014,7 +1014,7 @@ var fails = 'This string's value is not going to work!';
         processing.setup = function() {
           //the code for your basic setup functions goes here
           processing.size(700,500);
-        }
+        };
         processing.draw = function() {
           //The code to describe what you want to draw goes here.
           processing.rect(10,20,130,260);
@@ -1050,7 +1050,7 @@ var fails = 'This string's value is not going to work!';
             processing.setup = function() {
               //the code for your basic setup functions goes here
               processing.size(700,500);
-            }
+            };
             processing.draw = function() {
               //The code to describe what you want to draw goes here.
               processing.rect(10,20,130,260);
@@ -1075,7 +1075,7 @@ var fails = 'This string's value is not going to work!';
             processing.setup = function() {
               //the code for your basic setup functions goes here
               processing.size(700,500);
-            }
+            };
             processing.draw = function() {
               //The code to describe what you want to draw goes here.
               processing.rect(10,20,130,260);
@@ -1103,7 +1103,7 @@ var fails = 'This string's value is not going to work!';
         Similarly, you can have an ellipse: 
 
         ```
-         ellipse(50, 50, 25, 25); 
+         processing.ellipse(50, 50, 25, 25);
         ```
         
         The first set of coordinates is the center of the ellipse (x and y) and the second two numbers are how tall and wide it is. 
@@ -1471,8 +1471,8 @@ var fails = 'This string's value is not going to work!';
         We can do this before we even run our setup() function: 
 
         ```
-          var myData = processing.loadStrings('data.txt')
-          var mailChimpData = myData[0].split(',')
+          var myData = processing.loadStrings('data.txt');
+          var mailChimpData = myData[0].split(',');
           console.log(mailChimpData);
         ```
 
@@ -1597,7 +1597,7 @@ var fails = 'This string's value is not going to work!';
               processing.noFill();
               processing.ellipse(toTheLeftToTheLeft, 100, mailChimpData[i], mailChimpData[i]);
               toTheLeftToTheLeft = toTheLeftToTheLeft + 130;
-             }
+             };
         };
         ```
       </script>
@@ -1691,7 +1691,7 @@ var fails = 'This string's value is not going to work!';
         So at the top of your sketchProc() function, where you set up your data import, you can add this one line to establish your labels: 
 
         ```
-        var labels = ['Deliveries', 'Bounces', 'Opens', 'Clicks', 'Unsubscribers']
+        var labels = ['Deliveries', 'Bounces', 'Opens', 'Clicks', 'Unsubscribers'];
         ```
       </script>
     </section>
