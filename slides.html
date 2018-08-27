@@ -497,7 +497,7 @@ var fails = 'This string's value is not going to work!';
         Or *escape* it by using a backslash.
 
         ```javascript
-        var alsoWorks = 'This string\'s value is not going to work!';
+        var alsoWorks = 'This string\'s value will also work!';
         ```
 
         > Try adding each line into your console to check for errors.
@@ -933,11 +933,15 @@ var fails = 'This string's value is not going to work!';
 
         The first step is telling your web page how to read Processing commands. That means importing the library. Throw this code at the end of your BODY tag.
 
-        ```
-        < canvas id="myProcessingProject"></ canvas>
 
-        < script src="processing.min.js">< /script>
-        ```
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">canvas</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"myProcessingProject"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">canvas</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"processing.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+
+<!-- This is the output from running this code through it:
+        <canvas id="myProcessingProject"></canvas>
+        <script src="processing.min.js"></script>
+-->
 
         We add the CANVAS element to hold all of our Processing output. Instead of drawing HTML elements, we're going to be drawing to the canvas. 
 
@@ -993,7 +997,7 @@ var fails = 'This string's value is not going to work!';
     <section class="slide">
       <h1>The Draw function</h1>
 
-      <p>Just as we explored earlier, draw() is a method in Processing that actually adds elements to your canvas. It draws on your canvas.</p>
+      <p>draw() is a method in Processing that actually adds elements to your canvas. It draws on your canvas.</p>
 
       <p>The draw() method is not static, though. It keeps repeating over and over and over again. It's a constantly running loop. draw() is triggered 60 times per second, or once every 160 milliseconds.</p>
 
@@ -1158,7 +1162,7 @@ var fails = 'This string's value is not going to work!';
       <script type="text/template">
         #Challenge: The case of the growing rect() (code-along)
 
-        JavaScript let's you establish global variables that can start off as one value, but adjust as the program runs. So at the top of your sketchProc function, add these two variables:
+        JavaScript lets you establish global variables that can start off as one value, but adjust as the program runs. So at the top of your sketchProc function, add these two variables:
 
         ```
         var wide = 10;

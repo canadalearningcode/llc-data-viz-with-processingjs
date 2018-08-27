@@ -5,47 +5,9 @@
 </head>
 <body>
 
-	<canvas id="myProcessingProject"></canvas>
-	<script src="processing.min.js"></script>
+  <script>
 
-	<script>
-		var width = 10;
-		var height = 20;
-		var greenValue = 0;
-		function sketchProc(processing) {
-			processing.setup = function() {
-				//the code for your basic setup functions goes here
-				processing.size(700,500);
-				processing.background(15,200,80);
-		   };
-		   processing.draw = function() {
-				processing.background(15,greenValue,80);
-
-				if (processing.mouseX > 10 && processing.mouseX < (width + 10) && processing.mouseY > 20 && processing.mouseY < (height + 20)) {
-				  processing.fill(255,0,0);
-				} else {
-				  processing.fill(0,0,255);
-				}
-				
-				processing.rect(10,20,width,height);
-				processing.fill(0,255,0);
-				 processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
-
-				if (height >= 480) {
-  					console.log('all done');
-				} else {
-					width = width + 0.5;
-					height = height + 0.8;
-					greenValue = greenValue + 0.8;
-				}
-
-		   };
-
-		};
- 		
- 		var canvas = document.getElementById("myProcessingProject");
-		var processingInstance = new Processing(canvas, sketchProc);
-	</script>
+  </script>
 
 </body>
 </html>
