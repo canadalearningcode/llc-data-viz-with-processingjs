@@ -1370,27 +1370,29 @@ var fails = 'This string's value is not going to work!';
 
         Note that the trick here is that you technically detect where your rectangle is going to be before you even draw it, which can be a bit of a mind bend.
 
-      ```
-      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 20 && processing.mouseY < (high + 20)) {
-      processing.fill(255,0,0);
-      processing.rect(10,20,wide,high);
-      processing.fill(0,255,0);
-      processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
-      } else {
-      processing.fill(0,0,255);
-      processing.rect(10,20,wide,high);
-      }
+        ```
+        if (processing.mouseX > 10 && processing.mouseX < (wide + 10) &&
+            processing.mouseY > 20 && processing.mouseY < (high + 20)) {
+          processing.fill(255,0,0);
+          processing.rect(10,20,wide,high);
+          processing.fill(0,255,0);
+          processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
+        } else {
+          processing.fill(0,0,255);
+          processing.rect(10,20,wide,high);
+        }
 
-      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 80 && processing.mouseY < (high + 80)) {
-      processing.fill(0,255,0);
-      processing.rect(10,80,wide,high);
-      processing.fill(255,0,0);
-      processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
-      } else {
-      processing.fill(0,0,255);
-      processing.rect(10,80,wide,high);
-      }
-      ```
+        if (processing.mouseX > 10 && processing.mouseX < (wide + 10) &&
+            processing.mouseY > 80 && processing.mouseY < (high + 80)) {
+          processing.fill(0,255,0);
+          processing.rect(10,80,wide,high);
+          processing.fill(255,0,0);
+          processing.ellipse(processing.mouseX, processing.mouseY, 25, 25);
+        } else {
+          processing.fill(0,0,255);
+          processing.rect(10,80,wide,high);
+        }
+        ```
 
       </script>
     </section>
@@ -1412,27 +1414,29 @@ var fails = 'This string's value is not going to work!';
         The full solution is: 
 
 
-      ```
-      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 20 && processing.mouseY < (high + 20)) {
-      processing.fill(255,0,0);
-      processing.rect(10,20,wide,high);
-      processing.fill(0,255,0);
-      processing.ellipse(processing.mouseX, processing.mouseY, 25 + (processing.mouseY / 3), 25 + (processing.mouseY / 3));
-      } else {
-      processing.fill(0,0,255);
-      processing.rect(10,20,wide,high);
-      }
+        ```
+        if (processing.mouseX > 10 && processing.mouseX < (wide + 10) &&
+            processing.mouseY > 20 && processing.mouseY < (high + 20)) {
+          processing.fill(255,0,0);
+          processing.rect(10,20,wide,high);
+          processing.fill(0,255,0);
+          processing.ellipse(processing.mouseX, processing.mouseY, 25 + (processing.mouseY / 3), 25 + (processing.mouseY / 3));
+        } else {
+          processing.fill(0,0,255);
+          processing.rect(10,20,wide,high);
+        }
 
-      if (processing.mouseX > 10 && processing.mouseX < (wide + 10) && processing.mouseY > 80 && processing.mouseY < (high + 80)) {
-      processing.fill(0,255,0);
-      processing.rect(10,80,wide,high);
-      processing.fill(255,0,0);
-      processing.ellipse(processing.mouseX, processing.mouseY, 25 + (processing.mouseY / 3), 25 + (processing.mouseY / 3));
-      } else {
-      processing.fill(0,0,255);
-      processing.rect(10,80,wide,high);
-      }
-      ```
+        if (processing.mouseX > 10 && processing.mouseX < (wide + 10) &&
+            processing.mouseY > 80 && processing.mouseY < (high + 80)) {
+          processing.fill(0,255,0);
+          processing.rect(10,80,wide,high);
+          processing.fill(255,0,0);
+          processing.ellipse(processing.mouseX, processing.mouseY, 25 + (processing.mouseY / 3), 25 + (processing.mouseY / 3));
+        } else {
+          processing.fill(0,0,255);
+          processing.rect(10,80,wide,high);
+        }
+        ```
 
       </script>
     </section>
@@ -1450,7 +1454,7 @@ var fails = 'This string's value is not going to work!';
         
         Open the project folder in the course files. 
 
-        Look at Data.txt.
+        Look at data.txt.
 
         There 5 numbers in it. They are separated by commas, which is a common way to store data like this. 
 
